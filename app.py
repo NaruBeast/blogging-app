@@ -17,21 +17,6 @@ class BlogPost(db.Model):
     def __repr__(self):
         return f'Blog Post: {self.id}'
 
-
-# all_posts = [
-#     {
-#         'title': 'Post 1',
-#         'content': 'Content for post 1',
-#         'id': 1,
-#         'author': 'Lol'
-#     },
-#     {
-#         'title': 'Post 2',
-#         'content': 'Content for post 2',
-#         'id': 2
-#     }
-# ]
-
 @app.route('/')
 def index():
     return redirect('/posts')
