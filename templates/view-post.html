@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Post</title>
+{% endblock %}
+
+{% block body %}
+
+<div class="blog-post">
+    <h2 class="blog-post-title">{{ post.title }}</h2></br>
+    <div class="">
+        <div class="btn-group btn-group-sm" role="group" aria-label="Post Actions">
+            <a href="/posts/edit/{{post.id}}" class="btn btn-info">Edit</a>
+            <a href="/posts/delete/{{post.id}}" class="btn btn-danger">Delete</a>
+        </div>
+    </div>
+    </br>
+    <p class="blog-post-meta">{{ post.date_posted.strftime('%d %B %Y %H:%M') }} by <a href="#">{{post.author}}</a></p>
+    <p class="blog-post-meta">Category: {{ post.category }}</p>
+    <p> {{ post.content }} </p>
+</div>
+
+{% endblock %}

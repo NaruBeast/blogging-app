@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Posts</title>
+{% endblock %}
+
+{% block body %}
+
+<!-- <hr>
+    <h2> Create a New Blog Post </h2>
+    <form action='/posts' method = 'POST'>
+        Author: <input type='text' name='author' id='author'>
+        </br><br>
+        Title: <input type='text' name='title' id='title'>
+        <br><br>
+        Post: <input type='text' name='content' id='content'>
+        </br><br>
+        <input type='submit' value='Post'>
+    </form>
+    <hr> -->
+
+<h2 style="display:inline-block"> Published Posts </h2>
+</br>
+<div class="float-right">
+<a class="btn btn-success float-right" href="/new-post">Create New Post</a>
+</div>
+</br>
+{% for post in posts %}
+<div class="col-md-12">
+    <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+            <strong class="d-inline-block mb-2 text-primary">{{post.category}}</strong>
+            <h3 class="mb-0">{{post.title}}</h3>
+            <div class="mb-1 text-muted">{{post.date_posted.strftime('%d %B %Y %H:%M')}} by {{post.author}}</div>
+            <p class="card-text mb-auto">{{post.content | truncate(200, True) }}</p>
+            <!-- <a href="#" class="stretched-link">Continue reading</a> -->
+            <!-- <div class=""><a href="" class="btn btn-dark">Continue Reading</a></div> -->
+            <br>
+            <div class="">
+                <div class="btn-group btn-group-sm" role="group" aria-label="Post Actions">
+                    <a href="/posts/{{post.id}}" class="btn btn-dark">Continue Reading</a>
+                    <a href="/posts/edit/{{post.id}}" class="btn btn-info">Edit</a>
+                    <a href="/posts/delete/{{post.id}}" class="btn btn-danger">Delete</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endfor %}
+
+{% endblock %}
