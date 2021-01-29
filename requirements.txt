@@ -4,6 +4,7 @@ click==7.1.2
 Flask==1.1.2
 Flask-Dance==3.2.0
 Flask-SQLAlchemy==2.4.4
+gunicorn==20.0.4
 idna==2.10
 itsdangerous==1.1.0
 Jinja2==2.11.2
@@ -17,6 +18,7 @@ requests-oauthlib==1.3.0
 six==1.15.0
 SQLAlchemy==1.3.22
 SQLAlchemy-Utils==0.36.8
+tweepy==3.10.0
 urllib3==1.26.2
 URLObject==2.4.3
 Werkzeug==1.0.1
